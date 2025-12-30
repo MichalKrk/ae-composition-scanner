@@ -1,0 +1,31 @@
+{
+  "name": "ae-composition-scanner",
+  "version": "1.0.0",
+  "description": "Extract complete configuration data from After Effects compositions including voiceovers, subtitles, footages, text boxes, and music",
+  "main": "jsx/scanCompositionConfig.jsx",
+  "scripts": {
+    "validate": "ajv validate -s docs/config-schema.json -d docs/config-example-full.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ae-composition-scanner.git"
+  },
+  "keywords": [
+    "after-effects",
+    "extendscript",
+    "jsx",
+    "composition",
+    "config",
+    "scanner",
+    "automation",
+    "voiceover",
+    "subtitles",
+    "footage",
+    "music"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv-cli": "^5.0.0"
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "compositionName": "Main_Composition",
+  "Hook": {
+    "compositionName": "Hook",
+    "voice": {
+      "sourceName": "Voiceover_Jessica_cgSgspJ2msm6clMCkdW9_1764272135889.mp3",
+      "layerName": "Voiceover_Jessica_cgSgspJ2msm6clMCkdW9_1764272135889.mp3",
+      "voiceName": "Jessica",
+      "voiceID": "cgSgspJ2msm6clMCkdW9",
+      "format": "Voiceover",
+      "isSanitized": false,
+      "cloneType": null
+    },
+    "subtitles": {
+      "fontName": "AlbertSansRoman-Bold",
+      "fontSize": 55,
+      "fillColor": [250, 246, 246],
+      "strokeColor": [0, 0, 0],
+      "strokeWidth": 0,
+      "applyStroke": false,
+      "fontCapsOption": "FONT_NORMAL_CAPS",
+      "tracking": 40,
+      "leading": 70,
+      "autoLeading": false,
+      "numLines": 2,
+      "maxChars": 28,
+      "wordCount": 6,
+      "transform": {
+        "position": {
+          "value": [564, 1176, 0],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "anchorPoint": {
+          "value": [0, 0, 0],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "scale": {
+          "value": [100, 100, 100],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "rotation": {
+          "value": 0,
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "opacity": {
+          "value": 100,
+          "isAnimated": false,
+          "numKeys": 0
+        }
+      }
+    },
+    "textBoxes": {
+      "boxType": "Adaptive",
+      "layerName": "Adaptive Box Control",
+      "parameters": {
+        "Roundness": {
+          "type": "Slider",
+          "value": 10
+        },
+        "Size X": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Size Y": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Pos X": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Pos Y": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Color": {
+          "type": "Color",
+          "value": [2, 2, 2]
+        },
+        "Opacity": {
+          "type": "Slider",
+          "value": 100
+        }
+      }
+    },
+    "footages": [
+      {
+        "layerName": "Footage_HookPart_recXXXXXXXXXXXXXX.mp4",
+        "sourceName": "Footage_HookPart_recXXXXXXXXXXXXXX.mp4",
+        "inPoint": 0,
+        "outPoint": 2.43333333333333,
+        "duration": 2.43333333333333,
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "layerName": "Footage_HookPart_recXXXXXXXXXXXXXX.mp4",
+        "sourceName": "Footage_HookPart_recXXXXXXXXXXXXXX.mp4",
+        "inPoint": 2.43333333333333,
+        "outPoint": 5.36,
+        "duration": 2.92666666666667,
+        "enabled": true,
+        "order": 2
+      }
+    ]
+  },
+  "Body": {
+    "compositionName": "Body",
+    "voice": {
+      "sourceName": "Voiceover_Jessica_cgSgspJ2msm6clMCkdW9_1764247708206.mp3",
+      "layerName": "Voiceover_Jessica_cgSgspJ2msm6clMCkdW9_1764247708206.mp3",
+      "voiceName": "Jessica",
+      "voiceID": "cgSgspJ2msm6clMCkdW9",
+      "format": "Voiceover",
+      "isSanitized": false,
+      "cloneType": null
+    },
+    "subtitles": {
+      "fontName": "AlbertSansRoman-Bold",
+      "fontSize": 55,
+      "fillColor": [250, 247, 247],
+      "strokeColor": [0, 0, 0],
+      "strokeWidth": 0,
+      "applyStroke": false,
+      "fontCapsOption": "FONT_NORMAL_CAPS",
+      "tracking": 0,
+      "leading": null,
+      "autoLeading": true,
+      "numLines": 1,
+      "maxChars": 20,
+      "wordCount": 4,
+      "transform": {
+        "position": {
+          "value": [540, 1122, 0],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "anchorPoint": {
+          "value": [0, 0, 0],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "scale": {
+          "value": [100, 100, 100],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "rotation": {
+          "value": 0,
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "opacity": {
+          "value": 100,
+          "isAnimated": false,
+          "numKeys": 0
+        }
+      }
+    },
+    "textBoxes": {
+      "boxType": "Adaptive",
+      "layerName": "Adaptive Box Control",
+      "parameters": {
+        "Roundness": {
+          "type": "Slider",
+          "value": 10
+        },
+        "Size X": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Size Y": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Pos X": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Pos Y": {
+          "type": "Slider",
+          "value": 0
+        },
+        "Color": {
+          "type": "Color",
+          "value": [2, 2, 2]
+        },
+        "Opacity": {
+          "type": "Slider",
+          "value": 60
+        }
+      }
+    },
+    "footages": [
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_TryingOn_AtHomeNearTheWall_Before_Casual_BodyPart_HookPart_recGgNB14zRanJSYQ",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_TryingOn_AtHomeNearTheWall_Before_Casual_BodyPart_HookPart_recGgNB14zRanJSYQ.mp4",
+        "inPoint": 0,
+        "outPoint": 1.43333333333333,
+        "duration": 1.43333333333333,
+        "enabled": true,
+        "order": 1
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_BusinessCasual_Feminine_BodyPart_HookPart_recAVdM2B31IUyg90",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_BusinessCasual_Feminine_BodyPart_HookPart_recAVdM2B31IUyg90.mp4",
+        "inPoint": 1.43333333333333,
+        "outPoint": 5.13333333333333,
+        "duration": 3.7,
+        "enabled": true,
+        "order": 2
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_Scrolling_AtHomeNearTheWall_Before_Casual_BodyPart_HookPart_recogvieeZjEYu81f",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_Scrolling_AtHomeNearTheWall_Before_Casual_BodyPart_HookPart_recogvieeZjEYu81f.mp4",
+        "inPoint": 5.03333333333333,
+        "outPoint": 8.23333333333333,
+        "duration": 3.2,
+        "enabled": true,
+        "order": 3
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_Street_After_Feminine_BodyPart_HookPart_recXVe6lC9OOA5rxD",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_Street_After_Feminine_BodyPart_HookPart_recXVe6lC9OOA5rxD.mp4",
+        "inPoint": 8.2,
+        "outPoint": 10.1333333333333,
+        "duration": 1.93333333333333,
+        "enabled": true,
+        "order": 4
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_Bedroom_After_Feminine_BodyPart_HookPart_recqn15rD0Gayl73D",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_Bedroom_After_Feminine_BodyPart_HookPart_recqn15rD0Gayl73D.mp4",
+        "inPoint": 10.1333333333333,
+        "outPoint": 12.4666666666667,
+        "duration": 2.33333333333333,
+        "enabled": true,
+        "order": 5
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_Feminine_BodyPart_HookPart_recLh9hCKV9YjYJe2",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_Feminine_BodyPart_HookPart_recLh9hCKV9YjYJe2.mp4",
+        "inPoint": 12.4666666666667,
+        "outPoint": 14.2333333333333,
+        "duration": 1.76666666666667,
+        "enabled": true,
+        "order": 6
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_Walking_Porch_After_Feminine_BodyPart_HookPart_recKBwz8pStcszu0K",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_Walking_Porch_After_Feminine_BodyPart_HookPart_recKBwz8pStcszu0K.mp4",
+        "inPoint": 14.1333333333333,
+        "outPoint": 16.7,
+        "duration": 2.56666666666667,
+        "enabled": true,
+        "order": 7
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_Feminine_BodyPart_HookPart_recNyr8bzaohfu3hy",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_Feminine_BodyPart_HookPart_recNyr8bzaohfu3hy.mp4",
+        "inPoint": 16.7,
+        "outPoint": 19.4333333333333,
+        "duration": 2.73333333333333,
+        "enabled": true,
+        "order": 8
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_Feminine_BodyPart_HookPart_recKItKnIHLWyA3CL",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_ShowingOutfits_AtHomeNearTheWall_After_Feminine_BodyPart_HookPart_recKItKnIHLWyA3CL.mp4",
+        "inPoint": 19.4,
+        "outPoint": 21.3666666666667,
+        "duration": 1.96666666666667,
+        "enabled": true,
+        "order": 9
+      },
+      {
+        "layerName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_TakingCoffee_Terrace_After_Feminine_BodyPart_HookPart_recF5tHIcysQALDcX",
+        "sourceName": "Footage_TetianaShmuliaieva_Slim_Standart_Female_30yo_White_TakingCoffee_Terrace_After_Feminine_BodyPart_HookPart_recF5tHIcysQALDcX.mp4",
+        "inPoint": 21.3666666666667,
+        "outPoint": 23.3,
+        "duration": 1.93333333333333,
+        "enabled": true,
+        "order": 10
+      }
+    ]
+  },
+  "CTA": {
+    "compositionName": "CTA",
+    "voice": {
+      "sourceName": "ElevenLabs_2025-12-30T17_18_06_Roger - Laid-Back, Casual, Resonant_pre_sp100_s50_sb75_se0_b_m2.mp3",
+      "layerName": "ElevenLabs_2025-12-30T17_18_06_Roger - Laid-Back, Casual, Resonant_pre_sp100_s50_sb75_se0_b_m2.mp3",
+      "voiceName": "Roger - Laid-Back, Casual, Resonant",
+      "voiceID": null,
+      "format": "ElevenLabs",
+      "isSanitized": false,
+      "cloneType": "pre"
+    },
+    "subtitles": {
+      "fontName": "Poppins-Bold",
+      "fontSize": 69,
+      "fillColor": [255, 255, 255],
+      "strokeColor": [0, 0, 0],
+      "strokeWidth": 0,
+      "applyStroke": false,
+      "fontCapsOption": "FONT_ALL_CAPS",
+      "tracking": 0,
+      "leading": null,
+      "autoLeading": true,
+      "numLines": 2,
+      "maxChars": 14,
+      "wordCount": 3,
+      "transform": {
+        "position": {
+          "value": [539.99998986721, 687.311660349369, 0],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "anchorPoint": {
+          "value": [0.44865930080414, -24.1500015258789, 0],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "scale": {
+          "value": [100, 100, 100],
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "rotation": {
+          "value": 0,
+          "isAnimated": false,
+          "numKeys": 0
+        },
+        "opacity": {
+          "value": 100,
+          "isAnimated": false,
+          "numKeys": 0
+        }
+      }
+    },
+    "textBoxes": null,
+    "footages": [
+      {
+        "layerName": "vecteezy_green-screen-arrow-moving-background_35651080.mp4",
+        "sourceName": "vecteezy_green-screen-arrow-moving-background_35651080.mp4",
+        "inPoint": 0,
+        "outPoint": 3.53687020353687,
+        "duration": 3.53687020353687,
+        "enabled": true,
+        "order": 1
+      }
+    ]
+  },
+  "music": {
+    "layerName": "ES_Wishful Thinking - Phello.mp3",
+    "layerIndex": 5,
+    "sourceName": "ES_Wishful Thinking - Phello.mp3",
+    "inPoint": 0,
+    "outPoint": 31.4,
+    "duration": 31.4,
+    "enabled": true,
+    "audioLevels": {
+      "value": [-20, -20],
+      "isAnimated": false,
+      "numKeys": 0
+    }
+  }
+}
