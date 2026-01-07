@@ -48,6 +48,9 @@ function scanCompositionConfig(compItem) {
         // Scan composition structure
         var config = {
             compositionName: selectedComp.name,
+            aeVersion: null,  // Will be populated later
+            fonts: [],        // Will be populated later
+            plugins: [],      // Will be populated later
             Hook: null,
             Body: null,
             CTA: null,
@@ -89,6 +92,11 @@ function scanCompositionConfig(compItem) {
             }
         }
 
+        // Collect metadata (AE version, fonts, plugins) before scanning sections
+        config.aeVersion = _getAEVersion();
+        config.fonts = _collectAllFonts(selectedComp, sectionComps);
+        config.plugins = _collectAllPlugins(selectedComp, sectionComps);
+
         // Scan each found section in proper order: Hook -> Body -> CTA
         var sectionOrder = ["hook", "body", "cta"];
         var sectionKeyMapping = {
@@ -122,6 +130,18 @@ function scanCompositionConfig(compItem) {
         return JSON.stringify({
             error: "Error scanning composition: " + error.toString()
         });
+    }
+}
+
+/**
+ * Gets After Effects version number
+ * @returns {string} Version string (e.g., "24.1.0")
+ */
+function _getAEVersion() {
+    try {
+        return app.version.toString();
+    } catch (e) {
+        return "unknown";
     }
 }
 
@@ -878,4 +898,187 @@ function _analyzeTextContent(text) {
 function _capitalizeFirst(str) {
     if (!str) return str;
     return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+/**
+ * Recursively scans composition and nested precomps for fonts
+ * @param {CompItem} comp - Composition to scan
+ * @param {Object} visitedComps - Object tracking visited comp IDs to avoid loops
+ * @param {Object} fontSet - Object used as set to track unique fonts
+ */
+function _scanFontsRecursive(comp, visitedComps, fontSet) {
+    // Avoid infinite loops
+    if (!comp || !comp.id || visitedComps[comp.id]) return;
+    visitedComps[comp.id] = true;
+
+    // Scan all layers in this composition
+    for (var i = 1; i <= comp.numLayers; i++) {
+        var layer = comp.layer(i);
+
+        // If it's a text layer, extract font
+        if (layer instanceof TextLayer) {
+            try {
+                var textDoc = layer.property("Source Text").value;
+                var fontName = textDoc.font;
+                if (fontName) {
+                    fontSet[fontName] = true; // Use object as set
+                }
+            } catch (e) {
+                // Skip if can't read text properties
+            }
+        }
+
+        // If it's a precomp, recurse into it
+        if (layer instanceof AVLayer && layer.source instanceof CompItem) {
+            _scanFontsRecursive(layer.source, visitedComps, fontSet);
+        }
+    }
+}
+
+/**
+ * Collects all unique fonts from main composition and sections
+ * @param {CompItem} mainComp - Main composition
+ * @param {Object} sectionComps - Object with hook/body/cta section data
+ * @returns {Array<string>} Sorted array of unique font names
+ */
+function _collectAllFonts(mainComp, sectionComps) {
+    var fontSet = {};
+    var visitedComps = {};
+
+    // Scan main composition
+    _scanFontsRecursive(mainComp, visitedComps, fontSet);
+
+    // Scan section compositions
+    var sectionKeys = ["hook", "body", "cta"];
+    for (var i = 0; i < sectionKeys.length; i++) {
+        var sectionKey = sectionKeys[i];
+        if (sectionComps[sectionKey] && sectionComps[sectionKey].comp) {
+            _scanFontsRecursive(sectionComps[sectionKey].comp, visitedComps, fontSet);
+        }
+    }
+
+    // Convert set to sorted array
+    var fonts = [];
+    for (var font in fontSet) {
+        if (fontSet.hasOwnProperty(font)) {
+            fonts.push(font);
+        }
+    }
+    fonts.sort();
+
+    return fonts;
+}
+
+/**
+ * Recursively scans composition and nested precomps for effects/plugins
+ * @param {CompItem} comp - Composition to scan
+ * @param {Object} visitedComps - Object tracking visited comp IDs to avoid loops
+ * @param {Object} pluginSet - Object used as set to track unique plugins
+ */
+function _scanPluginsRecursive(comp, visitedComps, pluginSet) {
+    // Avoid infinite loops
+    if (!comp || !comp.id || visitedComps[comp.id]) return;
+    visitedComps[comp.id] = true;
+
+    // Scan all layers in this composition
+    for (var i = 1; i <= comp.numLayers; i++) {
+        var layer = comp.layer(i);
+
+        try {
+            // Get effects property group
+            var effects = layer.property("ADBE Effect Parade");
+            if (effects && effects.numProperties > 0) {
+                for (var j = 1; j <= effects.numProperties; j++) {
+                    var effect = effects.property(j);
+                    if (effect) {
+                        var effectName = effect.name;
+                        var matchName = effect.matchName;
+
+                        // Store as JSON string to ensure uniqueness
+                        var key = matchName + "|" + effectName;
+                        if (!pluginSet[key]) {
+                            pluginSet[key] = {
+                                name: effectName,
+                                matchName: matchName
+                            };
+                        }
+                    }
+                }
+            }
+        } catch (e) {
+            // Skip if can't read effects
+        }
+
+        // If it's a precomp, recurse into it
+        if (layer instanceof AVLayer && layer.source instanceof CompItem) {
+            _scanPluginsRecursive(layer.source, visitedComps, pluginSet);
+        }
+    }
+}
+
+/**
+ * Collects all unique plugins/effects from main composition and sections
+ * IMPORTANT: Returns ONLY third-party plugins (excludes built-in Adobe effects)
+ * @param {CompItem} mainComp - Main composition
+ * @param {Object} sectionComps - Object with hook/body/cta section data
+ * @returns {Array<object>} Sorted array of unique third-party plugins
+ */
+function _collectAllPlugins(mainComp, sectionComps) {
+    var pluginSet = {};
+    var visitedComps = {};
+
+    // Scan main composition
+    _scanPluginsRecursive(mainComp, visitedComps, pluginSet);
+
+    // Scan section compositions
+    var sectionKeys = ["hook", "body", "cta"];
+    for (var i = 0; i < sectionKeys.length; i++) {
+        var sectionKey = sectionKeys[i];
+        if (sectionComps[sectionKey] && sectionComps[sectionKey].comp) {
+            _scanPluginsRecursive(sectionComps[sectionKey].comp, visitedComps, pluginSet);
+        }
+    }
+
+    // List of built-in plugin prefixes
+    var builtInPrefixes = [
+        "ADBE",           // Adobe native effects
+        "Pseudo/",        // Essential Graphics controls & animation presets
+        "CC ",            // Cycore FX bundled
+        "CS ",            // Creative Suite/Cloud bundled
+        "APC ",           // Additional Plugin Set bundled
+        "VISINF ",        // Vision effects bundled
+        "ISL ",           // Mocha integration bundled
+        "SYNTHAP ",       // Synthetic Aperture bundled
+        "Keylight"        // Keylight bundled (The Foundry)
+    ];
+
+    // Helper function to check if plugin is built-in
+    function isBuiltIn(matchName) {
+        for (var i = 0; i < builtInPrefixes.length; i++) {
+            if (matchName.indexOf(builtInPrefixes[i]) === 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Convert set to sorted array
+    // FILTER: Exclude ALL built-in plugins
+    var plugins = [];
+    for (var key in pluginSet) {
+        if (pluginSet.hasOwnProperty(key)) {
+            var plugin = pluginSet[key];
+            // Show ONLY third-party plugins
+            if (!isBuiltIn(plugin.matchName)) {
+                plugins.push(plugin);
+            }
+        }
+    }
+
+    // Sort by name
+    plugins.sort(function(a, b) {
+        return a.name.localeCompare(b.name);
+    });
+
+    return plugins;
 }

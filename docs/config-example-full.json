@@ -1,5 +1,25 @@
 {
   "compositionName": "Main_Composition",
+  "aeVersion": "24.1.0",
+  "fonts": [
+    "AlbertSansRoman-Bold",
+    "Poppins-Bold",
+    "Roboto-Regular"
+  ],
+  "plugins": [
+    {
+      "name": "CC Force Motion Blur",
+      "matchName": "CC Force Motion Blur"
+    },
+    {
+      "name": "Optical Flares",
+      "matchName": "VideoCopilot OpticalFlares"
+    },
+    {
+      "name": "Saber",
+      "matchName": "Video Copilot Saber"
+    }
+  ],
   "Hook": {
     "compositionName": "Hook",
     "voice": {
